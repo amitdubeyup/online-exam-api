@@ -24,6 +24,7 @@ function loginUser(req, res) {
       ]
     })
     .then(response => {
+      console.log(response);
       if (response) {
         if (req.body.password == response.password) {
           if (response.status == 'active') {
