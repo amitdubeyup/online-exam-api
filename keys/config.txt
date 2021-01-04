@@ -1,10 +1,10 @@
-GIT URL: http://52.66.189.111/root/node-pdf-boat-server.git
-AWS PUBLIC IP: 65.0.184.27
+GIT URL: https://github.com/amitdubey8888/moshikhayaka-api.git
+AWS PUBLIC IP: 13.232.113.224
 
 How to connect AWS?
 
-Step 1: chmod 400 moshikhyaka.pem
-Step 2: ssh -i moshikhyaka.pem ec2-user@13.232.113.224
+Step 1: chmod 400 moshikhayaka.pem
+Step 2: ssh -i moshikhayaka.pem ec2-user@13.232.113.224
 
 How to install NodeJS AWS?
 
