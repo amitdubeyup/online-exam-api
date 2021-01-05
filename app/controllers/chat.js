@@ -43,7 +43,9 @@ function addChat(req, res) {
 }
 
 function fetchChat(req, res) {
-  Chat.find(req.body.query).then(response => {
+  Chat.find(req.body.query).sort({
+    createdAt: 1
+  }).then(response => {
     res.status(200);
     return res.json({
       success: true,
@@ -62,8 +64,14 @@ function fetchChat(req, res) {
 
 function fetchAllChat(req, res) {
   let query = req.body.query || {};
+  let sort = {
+    createdAt: 1
+  };
   let skip = 0;
   let limit = 10;
+  if (req.body.sort) {
+    sort = req.body.sort;
+  }
   if (req.body.skip) {
     skip = req.body.skip;
   }
@@ -71,6 +79,7 @@ function fetchAllChat(req, res) {
     limit = req.body.limit;
   }
   Chat.find(query)
+    .sort(sort)
     .skip(skip)
     .limit(limit)
     .then(response => {
